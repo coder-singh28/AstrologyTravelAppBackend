@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Direction Result</title>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f9fafb);
+            padding: 40px 15px;
+        }
+
+        .card {
+            max-width: 620px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 0.5px;
+        }
+
+        .header p {
+            margin-top: 6px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            background: #f9fafb;
+            font-size: 15px;
+            color: #111827;
+        }
+
+        input[readonly] {
+            cursor: default;
+        }
+
+        .direction-box {
+            background: #eef2ff;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .direction-box span {
+            display: block;
+            font-size: 14px;
+            color: #4f46e5;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .direction-box strong {
+            font-size: 32px;
+            color: #1e3a8a;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 25px rgba(79,70,229,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(79,70,229,0.5);
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 22px;
+            }
+
+            .direction-box strong {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="header">
+        <h2>🧭 Travel Direction</h2>
+        <p>Your journey orientation at a glance</p>
+    </div>
+
+        <form action="/more-insight" method="post">
+
+    <div class="content">
+
+        <div class="form-group">
+            <label>Source</label>
+            <input type="text" value="{{ source }}" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Destination</label>
+            <input type="text" value="{{ destination }}" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Travel Date</label>
+            <input type="text" value="{{ travel_date }}" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Travel Time</label>
+            <input type="text" value="{{ travel_time }}" readonly>
+        </div>
+
+        <input type="hidden" value="{{ source }}" name="source">
+        <input type="hidden" value="{{ destination }}" name="destination">
+        <input type="hidden" value="{{ travel_date }}" name="travel_date">
+        <input type="hidden" value="{{ travel_time }}" name="travel_time">
+        <input type="hidden" value="{{ source_latlong }}" name="source_latlong">
+        <input type="hidden" value="{{ destination_latlong }}" name="destination_latlong">
+        <input type="hidden" value="{{ bearing_degree }}" name="bearing_degree">
+        <input type="hidden" value="{{ direction }}" name="direction">
+
+        <div class="direction-box">
+            <span>Direction</span>
+            <strong>{{ direction }}</strong>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-primary" type="submit">
+                🔍 More Travel Insights
+            </button>
+        </div>
+
+    </div>
+        </form>
+</div>
+
+</body>
+</html>

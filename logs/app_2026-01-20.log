@@ -1,0 +1,122 @@
+2026-01-20 15:20:24,559 | INFO | AstrologyTravelAppBackend | Serving landing page
+2026-01-20 15:20:30,578 | INFO | AstrologyTravelAppBackend | Serving landing page
+2026-01-20 15:21:50,243 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:21:51,022 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:22:11,796 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:22:12,246 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:22:24,948 | INFO | AstrologyTravelAppBackend | Serving landing page
+2026-01-20 15:22:28,429 | INFO | AstrologyTravelAppBackend | Initiating Google OAuth2 login, redirect URI: http://127.0.0.1:8080/auth/google/callback
+2026-01-20 15:22:45,261 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:23:54,523 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 15:23:54,554 | INFO | AstrologyTravelAppBackend | Serving landing page
+2026-01-20 15:23:57,991 | INFO | AstrologyTravelAppBackend | Initiating Google OAuth2 login, redirect URI: http://127.0.0.1:8080/auth/google/callback
+2026-01-20 15:24:12,816 | INFO | AstrologyTravelAppBackend | Handling Google OAuth2 callback
+2026-01-20 15:24:14,115 | INFO | AstrologyTravelAppBackend | Google access token obtained: {'access_token': 'ya29.a0AUMWg_JGtGnEP4s3XRVAeHR3V4b4n4GIMK0TCAfUznuVx_F4KYIxGTq9kJeTZAthrQca8lx4xI2mClBsy-gun9n0tuDXpdCycvfctiFlP8stMgXdXHu0QuMCljh2sunP7u9gDfMZ9YS4rlVYueV4McwqqefQXFBglTexS4YurgVbRlpWStJ7KBZjn086dy4VvytG_CkaCgYKAV4SARYSFQHGX2Mi11fjkC7WPF0kIdo3gZHr5A0206', 'expires_in': 3599, 'scope': 'https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid', 'token_type': 'Bearer', 'id_token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6IjdiZjU5NTQ4OWEwYmIxNThiMDg1ZTIzZTdiNTJiZjk4OTFlMDQ1MzgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDk2NjY4NDk4Nzk4LW1kaWo3c3FkMTc3M3I0ajIyaXJuc3Y1dDF0a2NxcGhnLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA5NjY2ODQ5ODc5OC1tZGlqN3NxZDE3NzNyNGoyMmlybnN2NXQxdGtjcXBoZy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjY2NjQ0MDExMDM2Mjg2ODc4OSIsImVtYWlsIjoibmdveWFsNTJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiI5d0hDanBFUl9GTzc5a0NDZHcwLXNBIiwibm9uY2UiOiJvWnhFeXNRc2N1dnNoVWZnZ3o3OSIsIm5hbWUiOiJuaXNoYW50IGdveWFsIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tFbVFqUzRRWm9JTGlLVGhhcGd4NUpwOWtnT0Uydlhlalg0RS0xdjVYcEcxT0RPRlJoPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Im5pc2hhbnQiLCJmYW1pbHlfbmFtZSI6ImdveWFsIiwiaWF0IjoxNzY4OTAyODU0LCJleHAiOjE3Njg5MDY0NTR9.hHvpfed7yWcZX62m94G3nF_RlhPGhNNEWwdOmqJ4zMygQKtjUx1d68E51y7HxLxix4I9ICMXjR8cmLcLVj9ePyhdaioTB88X_slKlPuyfEGVhT2PyzuACbQCOvKpYPIvd90mVLHKTZUYnC4Skzi5R_ZC0OUZa_49lSy2i3Wdr-tCEMKS0ehJUMKxpMqdLBa_6h5YEiWiiERJm2v4wV8cal6fZoC4GuNgyiUlOF0yjdkyK1SJFLCQxWp7eM2YOLaIZj9n2eS0dz3vwYSSh1UKFRcaLH6Nx9JTTFRrSaYMyHnne3pQv_3mL8ph1E7-hkltAZLJNbQTUXsGU8laQgslhw', 'expires_at': 1768906452, 'userinfo': {'iss': 'https://accounts.google.com', 'azp': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'aud': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'sub': '116666440110362868789', 'email': 'ngoyal52@gmail.com', 'email_verified': True, 'at_hash': '9wHCjpER_FO79kCCdw0-sA', 'nonce': 'oZxEysQscuvshUfggz79', 'name': 'nishant goyal', 'picture': 'https://lh3.googleusercontent.com/a/ACg8ocKEmQjS4QZoILiKThapgx5Jp9kgOE2vXejX4E-1v5XpG1ODOFRh=s96-c', 'given_name': 'nishant', 'family_name': 'goyal', 'iat': 1768902854, 'exp': 1768906454}}
+2026-01-20 15:24:14,116 | INFO | AstrologyTravelAppBackend | Google Access Token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjdiZjU5NTQ4OWEwYmIxNThiMDg1ZTIzZTdiNTJiZjk4OTFlMDQ1MzgiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDk2NjY4NDk4Nzk4LW1kaWo3c3FkMTc3M3I0ajIyaXJuc3Y1dDF0a2NxcGhnLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA5NjY2ODQ5ODc5OC1tZGlqN3NxZDE3NzNyNGoyMmlybnN2NXQxdGtjcXBoZy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjY2NjQ0MDExMDM2Mjg2ODc4OSIsImVtYWlsIjoibmdveWFsNTJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiI5d0hDanBFUl9GTzc5a0NDZHcwLXNBIiwibm9uY2UiOiJvWnhFeXNRc2N1dnNoVWZnZ3o3OSIsIm5hbWUiOiJuaXNoYW50IGdveWFsIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tFbVFqUzRRWm9JTGlLVGhhcGd4NUpwOWtnT0Uydlhlalg0RS0xdjVYcEcxT0RPRlJoPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Im5pc2hhbnQiLCJmYW1pbHlfbmFtZSI6ImdveWFsIiwiaWF0IjoxNzY4OTAyODU0LCJleHAiOjE3Njg5MDY0NTR9.hHvpfed7yWcZX62m94G3nF_RlhPGhNNEWwdOmqJ4zMygQKtjUx1d68E51y7HxLxix4I9ICMXjR8cmLcLVj9ePyhdaioTB88X_slKlPuyfEGVhT2PyzuACbQCOvKpYPIvd90mVLHKTZUYnC4Skzi5R_ZC0OUZa_49lSy2i3Wdr-tCEMKS0ehJUMKxpMqdLBa_6h5YEiWiiERJm2v4wV8cal6fZoC4GuNgyiUlOF0yjdkyK1SJFLCQxWp7eM2YOLaIZj9n2eS0dz3vwYSSh1UKFRcaLH6Nx9JTTFRrSaYMyHnne3pQv_3mL8ph1E7-hkltAZLJNbQTUXsGU8laQgslhw
+2026-01-20 15:24:14,116 | INFO | AstrologyTravelAppBackend | Google user info retrieved: {'iss': 'https://accounts.google.com', 'azp': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'aud': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'sub': '116666440110362868789', 'email': 'ngoyal52@gmail.com', 'email_verified': True, 'at_hash': '9wHCjpER_FO79kCCdw0-sA', 'nonce': 'oZxEysQscuvshUfggz79', 'name': 'nishant goyal', 'picture': 'https://lh3.googleusercontent.com/a/ACg8ocKEmQjS4QZoILiKThapgx5Jp9kgOE2vXejX4E-1v5XpG1ODOFRh=s96-c', 'given_name': 'nishant', 'family_name': 'goyal', 'iat': 1768902854, 'exp': 1768906454}
+2026-01-20 15:24:14,123 | INFO | AstrologyTravelAppBackend | Serving home page for user: ngoyal52@gmail.com
+2026-01-20 22:28:17,496 | INFO | AstrologyTravelAppBackend | Serving home page for user: ngoyal52@gmail.com
+2026-01-20 22:41:22,504 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 22:41:40,486 | INFO | AstrologyTravelAppBackend | Serving landing page
+2026-01-20 22:43:51,028 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 22:43:51,032 | INFO | AstrologyTravelAppBackend | Initiating Google OAuth2 login, redirect URI: http://127.0.0.1:8080/auth/google/callback
+2026-01-20 22:43:53,104 | INFO | AstrologyTravelAppBackend | Handling Google OAuth2 callback
+2026-01-20 22:43:55,072 | INFO | AstrologyTravelAppBackend | Google access token obtained: {'access_token': 'ya29.A0AUMWg_K04Nx9xnp37hRXJHm5mK7wn34K6fOzOkx_B3xeDRW-HyyQwGyeyOLVcMt0M0fXaIIl67KOspA1xV5ARp2IYsC9Gija6k5PMg70hbaupDlaIw_nN17VRbGG4mXJnFqVjI1L-lrXj5FcbobhpvJfHbRm0BSoQxQyN-x3VGkVkR5k4004ch4GuAxj-8QQi40lhnm6OMckcd4yBMf9GR9M3Q8uIk2ZTL2a-mghixExYycKjaNdT-fuJi-iP7-QRnjYDmzov1NvGUpfcv-rmctsuuMaCgYKAeMSARYSFQHGX2MiDu-76tzZMjY3BjFInybYuQ0290', 'expires_in': 3598, 'scope': 'openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile', 'token_type': 'Bearer', 'id_token': 'eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NDRkMGZmMDU5MGYwMjUzMDE2NDNmMzI3NWJmNjg3NzY3NjU4MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDk2NjY4NDk4Nzk4LW1kaWo3c3FkMTc3M3I0ajIyaXJuc3Y1dDF0a2NxcGhnLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA5NjY2ODQ5ODc5OC1tZGlqN3NxZDE3NzNyNGoyMmlybnN2NXQxdGtjcXBoZy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjY2NjQ0MDExMDM2Mjg2ODc4OSIsImVtYWlsIjoibmdveWFsNTJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJQbHBYY3RMSy16TWN6N0N1VGVTSXdRIiwibm9uY2UiOiJGUUdjUm91TDRTaXduY2F1VVpmTCIsIm5hbWUiOiJuaXNoYW50IGdveWFsIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tFbVFqUzRRWm9JTGlLVGhhcGd4NUpwOWtnT0Uydlhlalg0RS0xdjVYcEcxT0RPRlJoPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Im5pc2hhbnQiLCJmYW1pbHlfbmFtZSI6ImdveWFsIiwiaWF0IjoxNzY4OTI5MjMzLCJleHAiOjE3Njg5MzI4MzN9.ndhPCvqnQ1eY4NzXHWzPQjx_KozJhh4AA7VAih16hoTzAv3jpvgYNRF2MXUKk73-SYQwrLISXJ4lHAva8PWiViQo1Q2Vjj9mPBBxfneFOxH2Rdr1l6arKlpBRc3YAqs8kXswDde68WWU8nGNts1X8mbw6_WOdRQP3GOr7ksriem24VNALolILBQ5_gLuW7-cKeBhRF8Uca3op-l01LsRd6SQqf5pJToCWSSwc3lE8vbtvvKxuCsngQkJBskFQMKU1wJFj3Hcla45RolgheaV2RCSnK7u1V2PiJUSp8kqYkDydmjjPGFq8ekza3fHJt_8Lsv1KjL6fNmGFjFFV1qJXA', 'expires_at': 1768932832, 'userinfo': {'iss': 'https://accounts.google.com', 'azp': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'aud': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'sub': '116666440110362868789', 'email': 'ngoyal52@gmail.com', 'email_verified': True, 'at_hash': 'PlpXctLK-zMcz7CuTeSIwQ', 'nonce': 'FQGcRouL4SiwncauUZfL', 'name': 'nishant goyal', 'picture': 'https://lh3.googleusercontent.com/a/ACg8ocKEmQjS4QZoILiKThapgx5Jp9kgOE2vXejX4E-1v5XpG1ODOFRh=s96-c', 'given_name': 'nishant', 'family_name': 'goyal', 'iat': 1768929233, 'exp': 1768932833}}
+2026-01-20 22:43:55,074 | INFO | AstrologyTravelAppBackend | Google Access Token: eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk1NDRkMGZmMDU5MGYwMjUzMDE2NDNmMzI3NWJmNjg3NzY3NjU4MjIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDk2NjY4NDk4Nzk4LW1kaWo3c3FkMTc3M3I0ajIyaXJuc3Y1dDF0a2NxcGhnLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA5NjY2ODQ5ODc5OC1tZGlqN3NxZDE3NzNyNGoyMmlybnN2NXQxdGtjcXBoZy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExNjY2NjQ0MDExMDM2Mjg2ODc4OSIsImVtYWlsIjoibmdveWFsNTJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJQbHBYY3RMSy16TWN6N0N1VGVTSXdRIiwibm9uY2UiOiJGUUdjUm91TDRTaXduY2F1VVpmTCIsIm5hbWUiOiJuaXNoYW50IGdveWFsIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tFbVFqUzRRWm9JTGlLVGhhcGd4NUpwOWtnT0Uydlhlalg0RS0xdjVYcEcxT0RPRlJoPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6Im5pc2hhbnQiLCJmYW1pbHlfbmFtZSI6ImdveWFsIiwiaWF0IjoxNzY4OTI5MjMzLCJleHAiOjE3Njg5MzI4MzN9.ndhPCvqnQ1eY4NzXHWzPQjx_KozJhh4AA7VAih16hoTzAv3jpvgYNRF2MXUKk73-SYQwrLISXJ4lHAva8PWiViQo1Q2Vjj9mPBBxfneFOxH2Rdr1l6arKlpBRc3YAqs8kXswDde68WWU8nGNts1X8mbw6_WOdRQP3GOr7ksriem24VNALolILBQ5_gLuW7-cKeBhRF8Uca3op-l01LsRd6SQqf5pJToCWSSwc3lE8vbtvvKxuCsngQkJBskFQMKU1wJFj3Hcla45RolgheaV2RCSnK7u1V2PiJUSp8kqYkDydmjjPGFq8ekza3fHJt_8Lsv1KjL6fNmGFjFFV1qJXA
+2026-01-20 22:43:55,075 | INFO | AstrologyTravelAppBackend | Google user info retrieved: {'iss': 'https://accounts.google.com', 'azp': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'aud': '1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com', 'sub': '116666440110362868789', 'email': 'ngoyal52@gmail.com', 'email_verified': True, 'at_hash': 'PlpXctLK-zMcz7CuTeSIwQ', 'nonce': 'FQGcRouL4SiwncauUZfL', 'name': 'nishant goyal', 'picture': 'https://lh3.googleusercontent.com/a/ACg8ocKEmQjS4QZoILiKThapgx5Jp9kgOE2vXejX4E-1v5XpG1ODOFRh=s96-c', 'given_name': 'nishant', 'family_name': 'goyal', 'iat': 1768929233, 'exp': 1768932833}
+2026-01-20 22:43:55,090 | INFO | AstrologyTravelAppBackend | Serving home page for user: ngoyal52@gmail.com
+2026-01-20 22:50:44,604 | INFO | AstrologyTravelAppBackend | --- psycopg2 error occurred
+2026-01-20 22:50:44,606 | INFO | AstrologyTravelAppBackend | connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "AstrologyTravelDB" does not exist
+
+2026-01-20 22:56:15,039 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.13 sec, ---HOST: localhost
+2026-01-20 22:56:15,051 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.14 sec, ---rows fetched: 0
+2026-01-20 22:56:15,052 | INFO | AstrologyTravelAppBackend | Database query result: []
+2026-01-20 22:56:15,054 | INFO | AstrologyTravelAppBackend | New user detected, inserting into database: ngoyal52@gmail.com
+2026-01-20 22:56:15,189 | INFO | AstrologyTravelAppBackend | --- Database connection committed : 0.13 ms
+2026-01-20 22:56:15,323 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.13 sec, ---HOST: localhost
+2026-01-20 22:56:15,332 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.14 sec, ---rows fetched: 1
+2026-01-20 22:56:15,333 | INFO | AstrologyTravelAppBackend | Post-insert database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', None, None, None, None)]
+2026-01-20 22:56:15,336 | INFO | AstrologyTravelAppBackend | User details - ID: 1, Email: ngoyal52@gmail.com, Name: nishant goyal, Mobile: None, DOB: None, TOB: None, Birth Place: None
+2026-01-20 22:56:15,345 | INFO | AstrologyTravelAppBackend | inserting session into database: ngoyal52@gmail.com
+2026-01-20 22:56:15,522 | INFO | AstrologyTravelAppBackend | --- Database connection committed : 0.18 ms
+2026-01-20 22:57:27,344 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.10 sec, ---HOST: localhost
+2026-01-20 22:57:27,351 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.11 sec, ---rows fetched: 1
+2026-01-20 22:57:27,352 | INFO | AstrologyTravelAppBackend | Database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', '7737663306', '1995-06-14', '04:20', 'jaipur', True, False, datetime.datetime(2026, 1, 20, 22, 56, 15, 178230, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), datetime.datetime(2026, 1, 20, 22, 56, 15, 178230, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))))]
+2026-01-20 22:57:27,448 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.10 sec, ---HOST: localhost
+2026-01-20 22:57:27,455 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.10 sec, ---rows fetched: 1
+2026-01-20 22:57:27,456 | INFO | AstrologyTravelAppBackend | Post-insert database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', '7737663306', '1995-06-14', '04:20', 'jaipur')]
+2026-01-20 22:57:27,457 | INFO | AstrologyTravelAppBackend | User details - ID: 1, Email: ngoyal52@gmail.com, Name: nishant goyal, Mobile: 7737663306, DOB: 1995-06-14, TOB: 04:20, Birth Place: jaipur
+2026-01-20 22:57:27,457 | INFO | AstrologyTravelAppBackend | inserting session into database: ngoyal52@gmail.com
+2026-01-20 22:57:27,567 | INFO | AstrologyTravelAppBackend | --- Database connection committed : 0.11 ms
+2026-01-20 23:00:56,757 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:09:29,350 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:18:41,090 | INFO | AstrologyTravelAppBackend | Received request for lat/long of place: pune by user_id: 1
+2026-01-20 23:18:41,661 | INFO | AstrologyTravelAppBackend | Lat/Long for place pune: (18.51957, 73.85535)
+2026-01-20 23:18:41,782 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.12 sec, ---HOST: localhost
+2026-01-20 23:18:41,787 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.13 sec, ---rows fetched: 1
+2026-01-20 23:18:41,788 | INFO | AstrologyTravelAppBackend | Valid session for user_id: 1
+2026-01-20 23:19:54,246 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:20:25,367 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:21:47,996 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:22:37,324 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:23:26,684 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:25:11,122 | INFO | AstrologyTravelAppBackend | Serving home page for user: ngoyal52@gmail.com
+2026-01-20 23:25:19,561 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.13 sec, ---HOST: localhost
+2026-01-20 23:25:19,570 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.14 sec, ---rows fetched: 1
+2026-01-20 23:25:19,571 | INFO | AstrologyTravelAppBackend | Database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', '7737663306', '1995-06-14', '04:20', 'jaipur', True, False, datetime.datetime(2026, 1, 20, 22, 56, 15, 178230, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))), datetime.datetime(2026, 1, 20, 22, 56, 15, 178230, tzinfo=datetime.timezone(datetime.timedelta(seconds=19800))))]
+2026-01-20 23:25:19,726 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.15 sec, ---HOST: localhost
+2026-01-20 23:25:19,733 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.16 sec, ---rows fetched: 1
+2026-01-20 23:25:19,735 | INFO | AstrologyTravelAppBackend | Post-insert database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', '7737663306', '1995-06-14', '04:20', 'jaipur')]
+2026-01-20 23:25:19,736 | INFO | AstrologyTravelAppBackend | User details - ID: 1, Email: ngoyal52@gmail.com, Name: nishant goyal, Mobile: 7737663306, DOB: 1995-06-14, TOB: 04:20, Birth Place: jaipur
+2026-01-20 23:25:19,736 | INFO | AstrologyTravelAppBackend | inserting session into database: ngoyal52@gmail.com
+2026-01-20 23:25:19,887 | INFO | AstrologyTravelAppBackend | --- Database connection committed : 0.15 ms
+2026-01-20 23:26:45,796 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:27:16,469 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:33:58,409 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:34:34,180 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:34:34,342 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.16 sec, ---HOST: localhost
+2026-01-20 23:34:34,348 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.16 sec, ---rows fetched: 0
+2026-01-20 23:34:34,349 | INFO | AstrologyTravelAppBackend | Valid session for user_id: 1
+2026-01-20 23:34:34,474 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.12 sec, ---HOST: localhost
+2026-01-20 23:34:34,481 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.13 sec, ---rows fetched: 1
+2026-01-20 23:34:34,482 | INFO | AstrologyTravelAppBackend | Post-insert database query result: [(1, 'ngoyal52@gmail.com', 'nishant goyal', '7737663306', '1995-06-14', '04:20', 'jaipur')]
+2026-01-20 23:34:34,483 | INFO | AstrologyTravelAppBackend | User details - ID: 1, Email: ngoyal52@gmail.com, Name: nishant goyal, Mobile: 7737663306, DOB: 1995-06-14, TOB: 04:20, Birth Place: jaipur
+2026-01-20 23:36:20,543 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:36:55,937 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:37:37,524 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:37:37,533 | ERROR | AstrologyTravelAppBackend | Invalid JSON in request: Expecting ',' delimiter: line 4 column 5 (char 84)
+2026-01-20 23:37:42,031 | INFO | AstrologyTravelAppBackend | Received request for lat/long of place: pune by user_id: 1
+2026-01-20 23:37:42,192 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.16 sec, ---HOST: localhost
+2026-01-20 23:37:42,200 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.17 sec, ---rows fetched: 0
+2026-01-20 23:37:42,201 | INFO | AstrologyTravelAppBackend | Valid session for user_id: 1
+2026-01-20 23:37:42,821 | INFO | AstrologyTravelAppBackend | Lat/Long for place pune: (18.51957, 73.85535)
+2026-01-20 23:38:08,315 | INFO | AstrologyTravelAppBackend | --- City names fetched : 0 rows
+2026-01-20 23:39:30,352 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:39:30,484 | INFO | AstrologyTravelAppBackend | --- City names fetched : 0 rows
+2026-01-20 23:39:30,607 | INFO | AstrologyTravelAppBackend | --- City names fetched : 0 rows
+2026-01-20 23:41:45,598 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:42:25,340 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:42:25,544 | INFO | AstrologyTravelAppBackend | --- City names fetched : 0 rows
+2026-01-20 23:42:36,200 | INFO | AstrologyTravelAppBackend | --- City names fetched : 2 rows
+2026-01-20 23:43:14,703 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:43:57,339 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:43:57,473 | INFO | AstrologyTravelAppBackend | --- City names fetched : 1 rows in 0.13 sec
+2026-01-20 23:43:57,590 | INFO | AstrologyTravelAppBackend | --- City names fetched : 1 rows in 0.11 sec
+2026-01-20 23:44:58,828 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:45:35,150 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:45:35,301 | INFO | AstrologyTravelAppBackend | --- City names fetched : 2 rows
+2026-01-20 23:48:20,377 | INFO | AstrologyTravelAppBackend | --- City names fetched : 2 rows
+2026-01-20 23:49:31,904 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:50:23,429 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:50:53,963 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:51:25,376 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:52:29,639 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:52:29,756 | INFO | AstrologyTravelAppBackend | --- Database connection established : 0.11 sec, ---HOST: localhost
+2026-01-20 23:52:29,761 | INFO | AstrologyTravelAppBackend | --- Database connection data fetched : 0.12 sec, ---rows fetched: 0
+2026-01-20 23:52:29,882 | INFO | AstrologyTravelAppBackend | --- City names fetched : 2 rows
+2026-01-20 23:54:00,363 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:54:24,030 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:59:33,950 | INFO | AstrologyTravelAppBackend | [STARTUP] FastAPI application started
+2026-01-20 23:59:36,409 | INFO | AstrologyTravelAppBackend | Landing page accessed
+2026-01-21 00:01:09,552 | ERROR | AstrologyTravelAppBackend | Token verification failed: Token expired, 1768932833 < 1768933869
+2026-01-21 00:01:22,894 | ERROR | AstrologyTravelAppBackend | Token verification failed: Token expired, 1768932833 < 1768933882

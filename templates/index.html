@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Astrology Travel App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .google-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+
+        .google-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #3c4043;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s ease;
+            text-decoration: none;
+        }
+
+        .google-btn:hover {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .google-icon {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔮 Astrology Travel App</h1>
+    <p>
+        Check whether your journey is astrologically favorable
+        based on date, time & nakshatra.
+    </p>
+    <a href="http://127.0.0.1:8080/google/auth/login-google" class="google-btn">
+    <img
+        class="google-icon"
+        src="https://developers.google.com/identity/images/g-logo.png"
+        alt="Google Logo"
+    >
+    Sign in with Google
+</a>
+    <footer>
+        © 2025 Astrology Travel App
+    </footer>
+</div>
+</body>
+</html>

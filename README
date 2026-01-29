@@ -1,1 +1,74 @@
-"AstrologyTravelAppBackend"
+-- public.audit_logs_details definition
+
+-- Drop table
+
+-- DROP TABLE public.audit_logs_details;
+
+CREATE TABLE public.audit_logs_details (
+	id bigserial NOT NULL,
+	user_id int8 NOT NULL,
+	session_token text NOT NULL,
+	event_name text NOT NULL,
+	description text NOT NULL,
+	created_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	updated_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	CONSTRAINT audit_logs_details_pkey PRIMARY KEY (id)
+);
+
+
+-- public.city_master definition
+
+-- Drop table
+
+-- DROP TABLE public.city_master;
+
+CREATE TABLE public.city_master (
+	city varchar(50) NULL,
+	lat varchar(50) NULL,
+	long varchar(50) NULL,
+	country varchar(50) NULL,
+	iso2 varchar(50) NULL,
+	state varchar(50) NULL
+);
+
+
+-- public.session_details definition
+
+-- Drop table
+
+-- DROP TABLE public.session_details;
+
+CREATE TABLE public.session_details (
+	id bigserial NOT NULL,
+	user_id int8 NOT NULL,
+	email varchar(255) NOT NULL,
+	session_token text NOT NULL,
+	expires_at timestamptz NOT NULL,
+	created_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	updated_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	CONSTRAINT session_details_pkey PRIMARY KEY (id)
+);
+
+
+-- public.users_details definition
+
+-- Drop table
+
+-- DROP TABLE public.users_details;
+
+CREATE TABLE public.users_details (
+	id bigserial NOT NULL,
+	email varchar(255) NOT NULL,
+	full_name varchar(255) NULL,
+	mobile_no varchar(15) NULL,
+	dob varchar(255) NULL,
+	tob varchar(255) NULL,
+	birth_place varchar(255) NULL,
+	is_active bool DEFAULT true NULL,
+	is_deleted bool DEFAULT false NULL,
+	created_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	updated_at timestamptz DEFAULT CURRENT_TIMESTAMP NULL,
+	CONSTRAINT users_details_email_key UNIQUE (email),
+	CONSTRAINT users_details_mobile_no_key UNIQUE (mobile_no),
+	CONSTRAINT users_details_pkey PRIMARY KEY (id)
+);

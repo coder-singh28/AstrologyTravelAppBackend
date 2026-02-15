@@ -20,7 +20,7 @@ COPY requirements.txt .
 # COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirments.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 EXPOSE 8080

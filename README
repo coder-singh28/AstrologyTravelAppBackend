@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+"AstrologyTravelAppBackend"
+uvicorn app.application:app --host 0.0.0.0 --port 8080 --reload
+=======
 -- public.audit_logs_details definition
 
 -- Drop table
@@ -72,3 +76,4 @@ CREATE TABLE public.users_details (
 	CONSTRAINT users_details_mobile_no_key UNIQUE (mobile_no),
 	CONSTRAINT users_details_pkey PRIMARY KEY (id)
 );
+>>>>>>> ab6a1ca6c55313c73afc7df2670a2cdf9bf17217

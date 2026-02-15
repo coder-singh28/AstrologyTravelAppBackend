@@ -24,7 +24,7 @@ RUN pip install --no-cache-dir -r requirments.txt
 
 COPY . .
 EXPOSE 8080
-CMD ["uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8080"]
+CMD ["uvicorn", "app.application:app", "--host", "127.0.0.1", "--port", "8080"]
 #
 # # Copy project
 # COPY ./app ./app

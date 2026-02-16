@@ -18,3 +18,4 @@ joblib
 python-multipart
 itsdangerous
 pycryptodome
+httpx

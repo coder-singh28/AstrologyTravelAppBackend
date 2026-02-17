@@ -50,7 +50,8 @@ async def login_with_google(request: Request):
     Initiate Google OAuth2 login flow.
     Redirects to Google consent screen.
     """
-    redirect_uri = request.url_for("google_callback")
+    # redirect_uri = request.url_for("google_callback")
+    redirect_uri = "https://astrologytravelappbackend-production.up.railway.app/google/auth/callback"
     logger.info(f"Initiating Google OAuth2 login, redirect URI: {redirect_uri}")
     return await oauth.google.authorize_redirect(request, redirect_uri)
 

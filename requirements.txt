@@ -20,3 +20,4 @@ itsdangerous
 pycryptodome
 httpx
 geopandas
+urlparse

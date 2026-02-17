@@ -1,5 +1,7 @@
 import psycopg2
 import time
+from urllib.parse import urlparse
+
 
 # # Database Configuration - Universal
 # DB_USERNAME = "postgres"

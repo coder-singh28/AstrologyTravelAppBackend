@@ -31,7 +31,8 @@ class app_utils:
         return {
             "status": "success",
             "status_code": status_code,
-            "response": response
+            # "response": encrypt(response)
+            "response": (response)
         }
 
     @staticmethod
@@ -49,7 +50,7 @@ class app_utils:
         }
 
     @staticmethod
-    def verify_session(session_token: str, user_id: int, database_utils, logger) -> bool:
+    def verify_session(session_token: str, user_id: str, database_utils, logger) -> bool:
         """Verify if session is valid and not expired using parameterized query"""
         query = "SELECT * FROM session_details WHERE session_token = %s AND user_id = %s AND expires_at > NOW()"
         try:

@@ -31,8 +31,8 @@ class app_utils:
         return {
             "status": "success",
             "status_code": status_code,
-            # "response": encrypt(response)
-            "response": (response)
+            "response": encrypt(response)
+            # "response": (response)
         }
 
     @staticmethod

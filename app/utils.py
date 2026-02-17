@@ -52,9 +52,9 @@ class app_utils:
     @staticmethod
     def verify_session(session_token: str, user_id: int, database_utils, logger) -> bool:
         """Verify if session is valid and not expired using parameterized query"""
-        query = "SELECT * FROM session_details WHERE session_token = %s AND user_id = %s AND expires_at > NOW()"
+        query = "SELECT * FROM session_details WHERE session_token = '"+str(session_token)+"' AND user_id = '"+str(user_id)+"' AND expires_at > NOW()"
         try:
-            result = database_utils.performeSelectStatement(query, (session_token, user_id), logger)
+            result = database_utils.performeSelectStatement(query, (), logger)
             is_valid = bool(result)
             logger.info(f"Session validation for user {user_id}: {'Valid' if is_valid else 'Invalid'}")
             return is_valid

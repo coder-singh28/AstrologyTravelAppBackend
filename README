@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 "AstrologyTravelAppBackend"
-uvicorn app.application:app --host 0.0.0.0 --port 8080 --reload
-=======
+-- uvicorn app.main:app --host 127.0.0.1 --port 8080 --reload
+source venv/bin/activate
 -- public.audit_logs_details definition
 
 -- Drop table

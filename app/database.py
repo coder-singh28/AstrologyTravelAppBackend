@@ -3,52 +3,52 @@ import time
 from urllib.parse import urlparse
 
 
-# # Database Configuration - Universal
-# DB_USERNAME = "postgres"
-# DB_PASSWORD = "123456"
-# DB_HOST = "localhost"
-# DB_PORT = "5432"
-# DB_NAME = "AstrologyTravelDB"
-
 # Database Configuration - Universal
 DB_USERNAME = "postgres"
-DB_PASSWORD = "brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW"
-DB_HOST = "postgres.railway.internal"
+DB_PASSWORD = "123456"
+DB_HOST = "localhost"
 DB_PORT = "5432"
-DB_NAME = "railway"
+DB_NAME = "AstrologyTravelDB"
+
+# # Database Configuration - Universal
+# DB_USERNAME = "postgres"
+# DB_PASSWORD = "brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW"
+# DB_HOST = "postgres.railway.internal"
+# DB_PORT = "5432"
+# DB_NAME = "railway"
 
 class database_utils:
     """Database utility class for handling all database operations"""
 
+    # @staticmethod
+    # def _get_connection():
+
+        # database_url = "postgresql://postgres:brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW@postgres.railway.internal:5432/railway"
+        #
+        # if not database_url:
+        #     raise ValueError("DATABASE_URL is not set")
+        #
+        # result = urlparse(database_url)
+        #
+        # return psycopg2.connect(
+        #     database=result.path[1:],  # remove leading '/'
+        #     user=DB_USERNAME,
+        #     password=DB_PASSWORD,
+        #     host=DB_HOST,
+        #     port=DB_PORT,
+        #     sslmode="require"  # 🔥 Required for Railway
+        # )
+
     @staticmethod
     def _get_connection():
-
-        database_url = "postgresql://postgres:brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW@postgres.railway.internal:5432/railway"
-
-        if not database_url:
-            raise ValueError("DATABASE_URL is not set")
-
-        result = urlparse(database_url)
-
+        """Create and return a database connection"""
         return psycopg2.connect(
-            database=result.path[1:],  # remove leading '/'
             user=DB_USERNAME,
             password=DB_PASSWORD,
             host=DB_HOST,
             port=DB_PORT,
-            sslmode="require"  # 🔥 Required for Railway
+            database=DB_NAME
         )
-
-    # @staticmethod
-    # def _get_connection():
-    #     """Create and return a database connection"""
-    #     return psycopg2.connect(
-    #         user=DB_USERNAME,
-    #         password=DB_PASSWORD,
-    #         host=DB_HOST,
-    #         port=DB_PORT,
-    #         database=DB_NAME
-    #     )
 
     @staticmethod
     def performeSelectStatement(query, inputParam, logger):

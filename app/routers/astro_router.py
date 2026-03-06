@@ -6,6 +6,10 @@ from app.utils import app_utils
 from app.direction import get_direction, predict_travel_utils
 from datetime import datetime
 from app.services import tithi_service
+from app.services import chaughadiya_service
+from app.services import panchang_service
+import json
+
 
 # ✅ THIS MUST BE NAMED `router`
 router = APIRouter(prefix="/astro", tags=["Astro"])
@@ -29,7 +33,7 @@ async def get_lat_long(request: Request):
     logger.info(f"Received request for lat/long of place: {place} by user_id: {user_id}")
     
     # Validate session FIRST before processing
-    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger)
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
     if not validate_session:
         logger.info("Invalid or expired session")
         return app_utils.failure_response(202, "Invalid or expired Session token")
@@ -64,10 +68,11 @@ async def fn_predict_travel(request: Request):
     source = body.get("source")
     destination = body.get("destination")
     travel_date = body.get("travel_date")
-    logger.info(f"Received travel prediction request from {source} to {destination} on {travel_date} by user_id: {user_id}")
+    travel_time = body.get("travel_time")
+    logger.info(f"Received travel prediction request from user_id: {user_id} for journey from {source} to {destination} on {travel_date} at {travel_time}")
 
     # Validate session FIRST before processing
-    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger)
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
     if not validate_session:
         logger.info("Invalid or expired session")
         return app_utils.failure_response(202, "Invalid or expired Session token")
@@ -106,7 +111,12 @@ async def fn_predict_travel(request: Request):
         pob_lat=get_direction.get_lat_lon(birth_place)[0],
         pob_lon=get_direction.get_lat_lon(birth_place)[1],
     )
-    
+
+    # save into trip_details
+    query_insert = """INSERT INTO trip_details (user_id,source_city,destination_city,travel_date,departure_time,predict_travel_response,created_at,updated_at) VALUES (%s, %s, %s, %s, %s, %s, NOW(), NOW())"""
+    database_utils.performInsertUpdateDelete(query_insert, (user_id, source, destination, datetime.strptime(travel_date, "%d-%m-%Y").date(), travel_time, json.dumps(result)), logger)
+
+
     return JSONResponse(content=app_utils.sucess_response(result))
 
 @router.post("/analyse_journey", response_class=JSONResponse)
@@ -129,7 +139,7 @@ async def fn_analyse_journey(request: Request):
     travel_time = body.get("travel_time")
 
     # Validate session FIRST before processing
-    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger)
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
     if not validate_session:
         logger.info("Invalid or expired session")
         return app_utils.failure_response(202, "Invalid or expired Session token")
@@ -153,3 +163,107 @@ async def fn_analyse_journey(request: Request):
         "direction": direction_info["direction"],
     }
     return JSONResponse(content=app_utils.sucess_response(response))
+
+
+@router.post("/day_chaughadiya", response_class=JSONResponse)
+async def fn_day_chaughadiya(request: Request):
+
+    try:
+        body = await request.json()
+    except Exception as e:
+        logger.error(f"Invalid JSON in request: {str(e)}")
+        return app_utils.failure_response(400, f"Invalid JSON format: {str(e)}")
+    
+    user_id = body.get("user_id")
+    session_token = body.get("session_token")
+    place = body.get("place")
+    latlong = get_direction.get_lat_lon(place)
+
+    # Validate session FIRST before processing
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
+    if not validate_session:
+        logger.info("Invalid or expired session")
+        return app_utils.failure_response(202, "Invalid or expired Session token")
+    
+    logger.info(f"Valid session for user_id: {user_id}")
+    
+    # Get astrological information
+    chaughadiya = chaughadiya_service.get_chaughadiya_json(
+        city=place,
+        country="India",
+        latitude=latlong[0],
+        longitude=latlong[1],
+    )
+    return JSONResponse(content=app_utils.sucess_response(chaughadiya))
+
+
+@router.post("/past_history", response_class=JSONResponse)
+async def fn_past_history(request: Request):
+    """
+    Get past travel history for a user.
+    Requires: user_id, session_token
+    """
+    try:
+        body = await request.json()
+    except Exception as e:
+        logger.error(f"Invalid JSON in request: {str(e)}")
+        return app_utils.failure_response(400, f"Invalid JSON format: {str(e)}")
+
+    user_id = body.get("user_id")
+    session_token = body.get("session_token")
+
+    # Validate session FIRST before processing
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
+    if not validate_session:
+        logger.info("Invalid or expired session")
+        return app_utils.failure_response(202, "Invalid or expired Session token")
+
+    logger.info(f"Valid session for user_id: {user_id}")
+
+    # Use parameterized query to prevent SQL injection
+    query = "SELECT source_city, destination_city, travel_date, departure_time, predict_travel_response FROM trip_details WHERE user_id = %s ORDER BY created_at DESC limit 5"
+    result = database_utils.performeSelectStatement(query, (user_id,), logger)
+    history = []
+    for row in result:
+        response = row[4]
+
+        if isinstance(response, str):
+            response = json.loads(response)
+
+        history.append({
+            "source_city": row[0],
+            "destination_city": row[1],
+            "travel_date": row[2].strftime("%d-%m-%Y"),
+            "departure_time": row[3].strftime("%H:%M:%S"),
+            "predict_travel_response": response,
+        })
+
+    return JSONResponse(content=app_utils.sucess_response(history))
+
+
+@router.post("/get_panchang", response_class=JSONResponse)
+async def fn_panchang(request: Request):
+    """
+    Get panchang details for a given city.
+    Requires: user_id, session_token, city
+    """
+    try:
+        body = await request.json()
+    except Exception as e:
+        logger.error(f"Invalid JSON in request: {str(e)}")
+        return app_utils.failure_response(400, f"Invalid JSON format: {str(e)}")
+
+    user_id = body.get("user_id")
+    session_token = body.get("session_token")
+    city = body.get("place")
+
+    # Validate session FIRST before processing
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
+    if not validate_session:
+        logger.info("Invalid or expired session")
+        return app_utils.failure_response(202, "Invalid or expired Session token")
+
+    logger.info(f"Valid session for user_id: {user_id}")
+
+    panchang_details = panchang_service.get_panchang(city)
+    return JSONResponse(content=app_utils.sucess_response(panchang_details))

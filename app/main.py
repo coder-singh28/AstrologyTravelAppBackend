@@ -6,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from datetime import datetime
 from app.logger import setup_logger
 from app.routers import auth_router, user_router, astro_router, city_router,google_router
+from starlette.middleware.sessions import SessionMiddleware
 
 # ========================================
 # FastAPI Application Configuration
@@ -14,6 +15,10 @@ app = FastAPI(
     title="Astrology Travel App",
     description="Backend API for travel astrology predictions",
     version="1.0.0"
+)
+app.add_middleware(
+    SessionMiddleware,
+    secret_key="1234567890abcdef"
 )
 
 # Mount static files
@@ -65,9 +70,9 @@ async def home(request: Request):
     
     logger.info(f"Serving home page for user: {user['email']}")
     return templates.TemplateResponse(
-        request=request,
-        name="home.html",
-        context={
+        "home.html",
+        {
+            "request": request,
             "user": user,
             "email": user["email"],
             "name": user["name"],
@@ -82,7 +87,11 @@ async def home(request: Request):
 async def index(request: Request):
     """Serve landing page"""
     logger.info("Landing page accessed")
-    return templates.TemplateResponse(request=request, name="index.html", context={})
+    # return templates.TemplateResponse(request=request, name="index.html", context={})
+    return templates.TemplateResponse(
+        "index.html",
+        {"request": request}
+    )
 
 
 @app.post("/logout")

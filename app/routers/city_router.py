@@ -26,7 +26,7 @@ async def get_cities(request: Request):
     session_token = body.get("session_token")
     prefix = body.get("prefix")
 
-    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger)
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
     if not validate_session:
         logger.info("Invalid or expired session")
         return app_utils.failure_response(202, "Invalid or expired Session token")

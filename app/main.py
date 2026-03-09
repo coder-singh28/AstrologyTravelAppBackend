@@ -60,7 +60,7 @@ app.include_router(google_router.router)
 @app.on_event("startup")
 async def startup_event():
     """Initialize application on startup"""
-    logger.info("[STARTUP] FastAPI application started")
+    logger.info(f"[STARTUP] :: {env} :: FastAPI application started")
 
 
 # ----------------------------------------

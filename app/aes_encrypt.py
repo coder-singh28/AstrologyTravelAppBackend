@@ -10,17 +10,23 @@ from Crypto.Cipher import AES
 import base64
 import json
 import os
+from dotenv import load_dotenv
+
+env = os.getenv("APP_ENV", "dev")
+if env == "prod":
+    load_dotenv(".env.prod")
+else:
+    load_dotenv(".env.dev")
 
 # Configuration constants (TODO: Move to environment variables)
 REQ_ENC_DEC_SALT_LENGTH = 10
 REQ_ENC_DEC_PASS_PHRASE_LENGTH = 5
 REQ_ENC_DEC_IV_LENGTH = 16
 
-# Hardcoded credentials (SECURITY RISK - move to .env)
-ENCRYPTION_SALT = "2da43c30d136618c9d88"
-ENCRYPTION_IV = "930b9760ce9fec3f4b18fec88258e313"
-ENCRYPTION_PASS_PHRASE = "9486900ed0"
-
+# Hardcoded credentials (SECURITY RISK - move to .env.dev)
+ENCRYPTION_SALT = os.getenv("ENCRYPTION_SALT")
+ENCRYPTION_IV = os.getenv("ENCRYPTION_IV")
+ENCRYPTION_PASS_PHRASE = os.getenv("ENCRYPTION_PASS_PHRASE")
 
 def generate_random_hex(length: int) -> str:
     """

@@ -24,3 +24,5 @@ astral
 jinja2==3.0.3
 itsdangerous
 geopy
+python-dotenv
+csv

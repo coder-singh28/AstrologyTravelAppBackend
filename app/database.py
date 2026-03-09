@@ -1,54 +1,33 @@
 import psycopg2
 import time
-from urllib.parse import urlparse
+import os
+from dotenv import load_dotenv
 
+env = os.getenv("APP_ENV", "dev")
 
-# Database Configuration - Universal
-DB_USERNAME = "postgres"
-DB_PASSWORD = "123456"
-DB_HOST = "localhost"
-DB_PORT = "5432"
-DB_NAME = "AstrologyTravelDB"
-
-# # Database Configuration - Universal
-# DB_USERNAME = "postgres"
-# DB_PASSWORD = "brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW"
-# DB_HOST = "postgres.railway.internal"
-# DB_PORT = "5432"
-# DB_NAME = "railway"
-
+if env == "prod":
+    load_dotenv(".env.prod")
+else:
+    load_dotenv(".env.dev")
 class database_utils:
-    """Database utility class for handling all database operations"""
-
-    # @staticmethod
-    # def _get_connection():
-
-        # database_url = "postgresql://postgres:brFjUCrJSeDVLnVAxfVCkTpuHjXUEecW@postgres.railway.internal:5432/railway"
-        #
-        # if not database_url:
-        #     raise ValueError("DATABASE_URL is not set")
-        #
-        # result = urlparse(database_url)
-        #
-        # return psycopg2.connect(
-        #     database=result.path[1:],  # remove leading '/'
-        #     user=DB_USERNAME,
-        #     password=DB_PASSWORD,
-        #     host=DB_HOST,
-        #     port=DB_PORT,
-        #     sslmode="require"  # 🔥 Required for Railway
-        # )
+    # """Database utility class for handling all database operations"""
 
     @staticmethod
     def _get_connection():
-        """Create and return a database connection"""
-        return psycopg2.connect(
-            user=DB_USERNAME,
-            password=DB_PASSWORD,
-            host=DB_HOST,
-            port=DB_PORT,
-            database=DB_NAME
-        )
+        db_params = {
+            "host": os.getenv("DB_HOST"),
+            "port": os.getenv("DB_PORT"),
+            "database": os.getenv("DB_NAME"),
+            "user": os.getenv("DB_USERNAME"),
+            "password": os.getenv("DB_PASSWORD")
+        }
+        # Enable SSL only for production
+        if env == "prod":
+            db_params["sslmode"] = "require"
+
+        conn = psycopg2.connect(**db_params)
+
+        return conn
 
     @staticmethod
     def performeSelectStatement(query, inputParam, logger):
@@ -62,7 +41,7 @@ class database_utils:
             cursor.execute(query, inputParam)
             data = cursor.fetchall()
             elapsed = format(time.time() - start_time, '.2f')
-            logger.info(f"Query executed | {len(data)} rows fetched in {elapsed}s | Host: {DB_HOST}")
+            logger.info(f"Query executed | {len(data)} rows fetched in {elapsed}s | Host: {os.getenv('DB_HOST')}")
             return data
         except psycopg2.Error as e:
             logger.error(f"Database error: {str(e)}")

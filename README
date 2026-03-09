@@ -1,6 +1,7 @@
 "AstrologyTravelAppBackend"
 -- uvicorn app.main:app --host 127.0.0.1 --port 8080 --reload
 source venv/bin/activate
+
 -- public.audit_logs_details definition
 
 -- Drop table
@@ -53,6 +54,27 @@ CREATE TABLE public.session_details (
 );
 
 
+-- public.trip_details definition
+
+-- Drop table
+
+-- DROP TABLE public.trip_details;
+
+CREATE TABLE public.trip_details (
+	trip_id serial4 NOT NULL,
+	user_id int4 NOT NULL,
+	source_city varchar(100) NOT NULL,
+	destination_city varchar(100) NOT NULL,
+	travel_date date NOT NULL,
+	departure_time time NOT NULL,
+	predict_travel_response jsonb NULL,
+	status varchar(20) DEFAULT 'PLANNED'::character varying NULL,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP NULL,
+	updated_at timestamp DEFAULT CURRENT_TIMESTAMP NULL,
+	CONSTRAINT trip_details_pkey PRIMARY KEY (trip_id)
+);
+
+
 -- public.users_details definition
 
 -- Drop table
@@ -75,4 +97,7 @@ CREATE TABLE public.users_details (
 	CONSTRAINT users_details_mobile_no_key UNIQUE (mobile_no),
 	CONSTRAINT users_details_pkey PRIMARY KEY (id)
 );
->>>>>>> ab6a1ca6c55313c73afc7df2670a2cdf9bf17217
+
+
+coder-singh28
+Abhinav@3306

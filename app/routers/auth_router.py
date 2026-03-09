@@ -13,14 +13,22 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from app.database import database_utils
 from app.utils import app_utils
+import os
+from dotenv import load_dotenv
+
+env = os.getenv("APP_ENV", "dev")
+if env == "prod":
+    load_dotenv(".env.prod")
+else:
+    load_dotenv(".env.dev")
 
 # ✅ THIS MUST BE NAMED `router`
 router = APIRouter(prefix="/api", tags=["Authentication"])
 logger = setup_logger()
 
 # Hardcoded credentials (TODO: Move to environment variables)
-GOOGLE_CLIENT_ID = "1096668498798-mdij7sqd1773r4j22irnsv5t1tkcqphg.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET = "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"
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 
 templates = Jinja2Templates(directory="templates")
 
@@ -56,8 +64,8 @@ async def google_login(request: Request):
     Initiate Google OAuth2 login flow.
     Redirects user to Google consent screen.
     """
-    redirect_uri = request.url_for("google_auth_callback")
-    logger.info(f"Initiating Google OAuth2 login, redirect URI: {redirect_uri}")
+    redirect_uri = os.getenv("redirect_uri")
+    logger.info(f"Initiating Google OAuth2 login, env redirect URI: {redirect_uri}")
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 

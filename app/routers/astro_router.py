@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from app.logger import setup_logger
 from app.database import database_utils
 from app.utils import app_utils
-from app.direction import get_direction, predict_travel_utils
+from app.direction import get_direction, predict_travel_utils ,predict_travel_utils_v2
 from datetime import datetime
 from app.services import tithi_service
 from app.services import chaughadiya_service
@@ -99,17 +99,29 @@ async def fn_predict_travel(request: Request):
     
     # Convert travel_date to datetime object
     travel_dt = datetime.strptime(travel_date, "%d-%m-%Y").replace(hour=7, minute=0)
-    
+
+    if dob is None:
+        dob = None
+    if tob is None:
+        tob = None
+
+    pob_lat = ""
+    pob_lon = ""
+    if birth_place is not None:
+        pob_lat = get_direction.get_lat_lon(birth_place)[0]
+        pob_lon = get_direction.get_lat_lon(birth_place)[1]
+
     # Predict travel based on astrological calculations
-    result = predict_travel_utils.predict_travel(
+    # result = predict_travel_utils.predict_travel(
+    result = predict_travel_utils_v2.predict_travel(
         travel_dt=travel_dt,
         lat=source_latlong[0],
         lon=source_latlong[1],
         direction=direction_info["direction"],
         dob=dob,
         tob=tob,
-        pob_lat=get_direction.get_lat_lon(birth_place)[0],
-        pob_lon=get_direction.get_lat_lon(birth_place)[1],
+        pob_lat=pob_lat,
+        pob_lon=pob_lon,
     )
 
     # save into trip_details
@@ -267,3 +279,29 @@ async def fn_panchang(request: Request):
 
     panchang_details = panchang_service.get_panchang(city)
     return JSONResponse(content=app_utils.sucess_response(panchang_details))
+
+@router.post("/get_generic_remedies", response_class=JSONResponse)
+async def fn_generic_remedies(request: Request):
+    """
+    Get generic remedies based on tithi and direction.
+    Requires: user_id, session_token, tithi, direction
+    """
+    try:
+        body = await request.json()
+    except Exception as e:
+        logger.error(f"Invalid JSON in request: {str(e)}")
+        return app_utils.failure_response(400, f"Invalid JSON format: {str(e)}")
+
+    user_id = body.get("user_id")
+    session_token = body.get("session_token")
+
+    # Validate session FIRST before processing
+    validate_session = app_utils.verify_session(session_token, user_id, database_utils, logger,request)
+    if not validate_session:
+        logger.info("Invalid or expired session")
+        return app_utils.failure_response(202, "Invalid or expired Session token")
+    #
+    # logger.info(f"Valid session for user_id: {user_id}")
+    #
+    # remedies = predict_travel_utils_v2.get_generic_remedies(tithi, direction)
+    # return JSONResponse(content=app_utils.sucess_response(remedies))

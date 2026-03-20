@@ -158,9 +158,31 @@ def verify_google_token(request: Request, data: GoogleAuthRequest):
         # Create session token
         session_token = app_utils.create_session()
 
+        # Check if session exists
+        check_query = "SELECT 1 FROM session_details WHERE user_id = %s"
+        result = database_utils.performeSelectStatement(check_query, (user_id,), logger)
+        expires_at_token = os.getenv("expires_at_token")
+
+        if result:
+            logger.info(f"Existing session found for user_id {user_id}, updating session token")
+            update_query = f"""
+            UPDATE session_details
+            SET session_token = %s,
+                expires_at = NOW() + INTERVAL '{expires_at_token}',
+                email = %s
+            WHERE user_id = %s
+            """
+            database_utils.performInsertUpdateDelete(update_query, (session_token, email, user_id), logger)
+        else:
+            logger.info(f"No existing session for user_id {user_id}, creating new session")
+            insert_query = f"""
+            INSERT INTO session_details (user_id, email, session_token, expires_at)
+            VALUES (%s, %s, %s, NOW() + INTERVAL '{expires_at_token}')
+            """
+            database_utils.performInsertUpdateDelete(insert_query, (user_id, email, session_token), logger)
         # Insert session into database (using parameterized query)
-        insert_query = "INSERT INTO session_details (user_id, email, session_token, expires_at) VALUES (%s, %s, %s, NOW() + INTERVAL '1 hour')"
-        database_utils.performInsertUpdateDelete(insert_query, (user_id, email, session_token), logger)
+        # insert_query = "INSERT INTO session_details (user_id, email, session_token, expires_at) VALUES (%s, %s, %s, NOW() + INTERVAL '1 hour')"
+        # database_utils.performInsertUpdateDelete(insert_query, (user_id, email, session_token), logger)
 
         # Return user data with session token
         response = {
